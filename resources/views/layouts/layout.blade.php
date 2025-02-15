@@ -7,7 +7,6 @@
   <title>@yield('title', 'Mi aplicación')</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Hacer que el footer se quede al fondo */
     html, body {
       height: 100%;
     }
@@ -34,19 +33,19 @@
 
     <nav class="d-flex justify-content-between align-items-center p-3 bg-dark text-white" aria-label="Header navigation">
       <div class="d-flex">
-        <a class="nav-link text-white" href="#">Inicio</a>
+        <a class="nav-link text-white" href="/">Inicio</a>
         <div class="dropdown">
           <button class="btn btn-link text-white dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Publicaciones
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Reseñas de productos</a>
-            <a class="dropdown-item" href="#">Noticias de Apple</a>
-            <a class="dropdown-item" href="#">Consejos y trucos</a>
-            <a class="dropdown-item" href="#">Comparativas</a>
-            <a class="dropdown-item" href="#">Tutoriales</a>
-            <a class="dropdown-item" href="#">Accesorios Apple</a>
-            <a class="dropdown-item" href="#">Apple en el trabajo y productividad</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Reseñas de productos') }}">Reseñas de productos</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Noticias de Apple') }}">Noticias de Apple</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Consejos y trucos') }}">Consejos y trucos</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Comparativas') }}">Comparativas</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Tutoriales') }}">Tutoriales</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Accesorios Apple') }}">Accesorios Apple</a>
+            <a class="dropdown-item" href="{{ route('posts.filterByType', 'Apple en el trabajo y productividad') }}">Apple en el trabajo y productividad</a>
           </div>
         </div>
       </div>
