@@ -7,7 +7,8 @@
   <title>@yield('title', 'Mi aplicación')</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    html, body {
+    html,
+    body {
       height: 100%;
     }
 
@@ -51,9 +52,19 @@
       </div>
 
       <div class="d-flex">
-        <a class="nav-link text-white" href="#">Iniciar sesión</a>
+        @if(Cookie::get('admin_id'))
+        <!-- Formulario para cerrar sesión con método POST -->
+        <form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button type="submit" class="nav-link text-white" style="border: none; background: none;">Cerrar sesión</button>
+        </form>
+        @else
+        <a class="nav-link text-white" href="{{ route('login') }}">Iniciar sesión</a>
         <a class="nav-link text-white" href="#">Quiero participar en el blog</a>
+        @endif
       </div>
+
+
     </nav>
 
     <main class="m-5">
